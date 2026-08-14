@@ -11,57 +11,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     padding: 20px;
-}
-
-/* Portada Principal */
-.hero {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-   
-    margin-bottom: 40px;
-}
-
-.hero h2{
-      font-size: 4.5rem;
-  color: #A7E0DB;
-    text-shadow: 0 0 30px #A7E0DB(0, 240, 255, 0.5);
-    margin-bottom: 10px;
-}
-
-.hero h1 {
-    font-size: 7rem;
-    color: #00f0ff; 
-    text-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 1.3rem;
-    color: #3E9B94;
-    margin-bottom: 10px;
-}
-
-/* Botón estilo tech */
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background: transparent;
-    color: #00f0ff;
-    border: 2px solid #00f0ff;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #00f0ff;
-    color: #0b0f19;
-    box-shadow: 0 0 15px #00f0ff;
+    overflow-x: hidden; /* Evita desbordamiento horizontal en móviles */
 }
 
 /* Estilos para la barra de navegación superior */
@@ -71,6 +21,7 @@ body {
     left: 0;
     width: 100%;
     background-color: rgba(11, 15, 25, 0.95);
+    backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
     padding: 15px 30px;
@@ -141,7 +92,7 @@ body {
     max-height: 300px;
 }
 
-/* Apartados al ladito de la barrita */
+/* Apartados horizontales para pantalla grande */
 .nav-links {
     display: flex;
     gap: 20px;
@@ -160,3 +111,117 @@ body {
     color: #00f0ff;
     text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
 }
+
+/* Portada Principal (Escritorio por defecto) */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 40px 20px;
+    margin-bottom: 40px;
+}
+
+.hero h2 {
+    font-size: 4.5rem;
+    color: #A7E0DB;
+    text-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 7rem;
+    color: #00f0ff;
+    text-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #3E9B94;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+/* Botón estilo tech */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: transparent;
+    color: #00f0ff;
+    border: 2px solid #00f0ff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #00f0ff;
+    color: #0b0f19;
+    box-shadow: 0 0 15px #00f0ff;
+}
+
+/* ==========================================
+   ADAPTACIÓN RESPONSIVA (MÓVILES Y TABLETS)
+   ========================================== */
+
+/* Tablets y celulares grandes (< 768px) */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    /* Ocultamos los enlaces horizontales para limpiar el nav y dejar solo la hamburguesa */
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: 80vh;
+        padding-top: 120px;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+/* Celulares pequeños (< 480px) */
+@media screen and (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        width: 180px;
+    }
+}   

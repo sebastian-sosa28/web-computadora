@@ -1,0 +1,236 @@
+/* ==========================================================================
+   1. VARIABLES GLOBALES Y RESET
+   ========================================================================== */
+:root {
+    --bg-primary: #0f172a;        /* Fondo oscuro Slate */
+    --bg-surface: #1e293b;        /* Color para tarjetas y bloques */
+    --bg-surface-hover: #334155;  /* Estado hover */
+    --accent-color: #38bdf8;      /* Azul neón principal */
+    --accent-hover: #0284c7;      /* Hover de botones */
+    --text-primary: #f8fafc;      /* Texto principal */
+    --text-secondary: #94a3b8;    /* Texto secundario */
+    --border-color: #334155;      /* Bordes sutiles */
+    --radius: 10px;               /* Bordes redondeados */
+    --transition: all 0.25s ease; /* Transiciones suaves */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding-top: 75px; /* Espacio para la barra de navegación superior */
+}
+
+/* ==========================================================================
+   2. BARRA DE NAVEGACIÓN Y MENÚ HAMBURGUESA
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(30, 41, 59, 0.95);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.menu-container {
+    position: relative;
+}
+
+/* Checkbox oculto para desplegar el menú */
+.menu-checkbox {
+    display: none;
+}
+
+/* Icono Hamburguesa */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    height: 2px;
+    width: 100%;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/* Menú Desplegable */
+.dropdown-menu {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 0.5rem 0;
+    list-style: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    display: none;
+    flex-direction: column;
+    min-width: 190px;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.6rem 1.2rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--bg-surface-hover);
+    color: var(--accent-color);
+}
+
+/* Mostrar menú cuando el checkbox está activo */
+.menu-checkbox:checked ~ .dropdown-menu {
+    display: flex;
+}
+
+/* Enlaces superiores derechos */
+.nav-links {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   3. ESTRUCTURA DE TEXTO Y CONTENIDO
+   ========================================================================== */
+.titulo {
+    text-align: center;
+    padding: 1.5rem 1rem 1rem;
+}
+
+.titulo h1 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.contenido {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+}
+
+section p {
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    text-align: justify;
+}
+
+/* Bloque destacado para la Síntesis Final */
+.bloque-adicional {
+    background-color: var(--bg-surface);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 1.2rem;
+}
+
+.bloque-adicional h3 {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.bloque-adicional p {
+    color: var(--text-primary);
+    font-size: 0.98rem;
+}
+
+/* ==========================================================================
+   4. BOTONES DE NAVEGACIÓN INFERIOR
+   ========================================================================== */
+.botones-container {
+    max-width: 800px;
+    margin: 2.5rem auto 3rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.btn, .btn2 {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.btn {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn:hover {
+    background-color: var(--bg-surface-hover);
+}
+
+.btn2 {
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+}
+
+.btn2:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 600px) {
+    .botones-container {
+        flex-direction: column;
+    }
+    
+    .btn, .btn2 {
+        width: 100%;
+    }
+}
