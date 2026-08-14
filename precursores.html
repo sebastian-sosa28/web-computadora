@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precursores</title>
+    <title>Precursores y Generaciones de la Computación</title>
     <link rel="stylesheet" href="precursores.css">
 </head>
 <body>
-     <!--menu de interaccion-->
-   <!-- Barra de interacción superior -->
+    <!-- Barra de interacción superior -->
     <nav class="navbar">
         <!-- Menú desplegable con las tres rayitas (Hamburguesa) -->
         <div class="menu-container">
@@ -22,31 +21,146 @@
             <!-- Opciones que se desglosan al hacer clic en las rayitas -->
             <ul class="dropdown-menu">
                 <li><a href="antecedentes.html">Antecedentes</a></li>
-                <li><a href="precursores.html">Precursores</a></li>
-                <li><a href="#contenido"> Generaciones</a></li>
-                <li><a href="#contenido">Componentes</a></li>
-                <li><a href="#contenido"> Hardware y Software</a></li>
+                <li><a href="#precursores">Precursores</a></li>
+                <li><a href="#generaciones">Generaciones</a></li>
+                <li><a href="#adicionales">Avances e Historia</a></li>
+                <li><a href="hardware.html">Hardware y Software</a></li>
             </ul>
         </div>
 
         <!-- Apartados extras al ladito de la barrita -->
         <div class="nav-links">
             <a href="index.html">Inicio</a>
-            <a href="indice.html">Indice</a>
-            <a href="bibliografia.html">bibliografia</a>
+            <a href="indice.html">Índice</a>
+            <a href="bibliografia.html">Bibliografía</a>
         </div>
     </nav>
-    <header class="titulo">
-        <h1>Precursores de la computacion</h1>
 
+    <header class="titulo">
+        <h1>Precursores de la Computación y Generaciones</h1>
     </header>
 
+    <!-- Contenido principal -->
+    <main class="contenido" id="contenido">
 
+        <!-- Sección 1: Precursores -->
+        <section id="precursores" class="seccion-precursores">
+            <h2>1. Precursores de la Computación</h2>
+            <p class="introduccion">Personajes clave que sentaron las bases teóricas y mecánicas para el desarrollo de la informática moderna:</p>
 
+            <div class="grid-precursores">
+                <article class="tarjeta-precursor">
+                    <h3>Blaise Pascal</h3>
+                    <p>Inventó la <strong>Pascalina</strong> en el siglo XVII, una de las primeras calculadoras mecánicas a base de engranajes, capaz de realizar sumas y restas.</p>
+                </article>
 
-     <div class="botones-container">
+                <article class="tarjeta-precursor">
+                    <h3>Gottfried Wilhelm Leibniz</h3>
+                    <p>Perfeccionó la máquina de Pascal creando la <strong>calculadora escalonada</strong>, que añadió las operaciones de multiplicación, división y raíces cuadradas.</p>
+                </article>
+
+                <article class="tarjeta-precursor">
+                    <h3>Joseph Marie Jacquard</h3>
+                    <p>Diseñó el <strong>telar de Jacquard</strong>, utilizando tarjetas perforadas para automatizar diseños textiles, un principio pionero para el almacenamiento de datos.</p>
+                </article>
+
+                <article class="tarjeta-precursor">
+                    <h3>Charles Babbage</h3>
+                    <p>Considerado el <em>Padre de la Computación</em>. Diseñó la <strong>Máquina Diferencial</strong> y la <strong>Máquina Analítica</strong>, anticipando la estructura de procesador, memoria e entrada/salida.</p>
+                </article>
+
+                <article class="tarjeta-precursor">
+                    <h3>Augusta Ada Byron (Ada Lovelace)</h3>
+                    <p>Reconocida como la <strong>primera programadora de la historia</strong> al crear el primer algoritmo diseñado para ser procesado por la máquina de Babbage.</p>
+                </article>
+
+                <article class="tarjeta-precursor">
+                    <h3>Herman Hollerith</h3>
+                    <p>Desarrolló la <strong>máquina tabuladora</strong> con tarjetas perforadas para el censo de EE. UU. Su compañía fue una de las bases fundacionales de <strong>IBM</strong>.</p>
+                </article>
+
+                <article class="tarjeta-precursor">
+                    <h3>Howard H. Aiken</h3>
+                    <p>Ingeniero que diseñó la <strong>Harvard Mark I</strong>, una de las primeras computadoras electromecánicas de gran escala.</p>
+                </article>
+
+                <article class="tarjeta-precursor">
+                    <h3>J. Presper Eckert y John W. Mauchly</h3>
+                    <p>Pioneros en la construcción de la <strong>ENIAC</strong> (primera computadora electrónica de propósito general) y la <strong>UNIVAC</strong> (primera computadora comercial).</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección 2: Generaciones de la Computadora -->
+        <section id="generaciones" class="seccion-generaciones">
+            <h2>2. Generaciones de la Computadora</h2>
+            <div class="tabla-contenedor">
+                <table class="tabla-generaciones">
+                    <thead>
+                        <tr>
+                            <th>Generación</th>
+                            <th>Periodo</th>
+                            <th>Tecnología Principal</th>
+                            <th>Características Destacadas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1.ª Generación</strong></td>
+                            <td>1951 - 1958</td>
+                            <td>Tubos / Válvulas de vacío</td>
+                            <td>Gran tamaño, alto consumo de energía, generación excesiva de calor y programación mediante tarjetas perforadas.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2.ª Generación</strong></td>
+                            <td>1958 - 1964</td>
+                            <td>Transistores</td>
+                            <td>Reemplazaron a los tubos de vacío; redujeron tamaño y consumo energético. Surgen lenguajes como FORTRAN y COBOL.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3.ª Generación</strong></td>
+                            <td>1964 - 1971</td>
+                            <td>Circuitos Integrados (Chips)</td>
+                            <td>Agrupación de transistores en silicio. Aumento de velocidad, capacidad multitarea y reducción drástica de costos.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4.ª Generación</strong></td>
+                            <td>1971 - 1981</td>
+                            <td>Microprocesadores</td>
+                            <td>Unificación de la CPU en un solo chip miniaturizado. Nace la computadora personal (PC).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5.ª Generación</strong></td>
+                            <td>En adelante</td>
+                            <td>Inteligencia Artificial y Procesamiento Masivo</td>
+                            <td>Redes neuronales, procesamiento en paralelo, lenguaje natural, robótica avanzada y supercómputo.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sección 3: Puntos Adicionales -->
+        <section id="adicionales" class="seccion-adicionales">
+            <h2>3. Avances Adicionales e Historia Contextual</h2>
+            
+            <article class="bloque-adicional">
+                <h3>Robótica e Inteligencia Artificial</h3>
+                <p>Evolución hacia sistemas autónomos capaces de procesar lenguaje natural, reconocer patrones visuales y aprender de grandes volúmenes de datos mediante aprendizaje automático.</p>
+            </article>
+
+            <article class="bloque-adicional">
+                <h3>Historia de la Computación en Guatemala</h3>
+                <p>Reseña sobre la llegada de los primeros equipos de cómputo aplicados a la recopilación estadística gubernamental y su posterior integración en la educación superior e investigación universitaria.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Botones de navegación inferior -->
+    <div class="botones-container">
         <a href="antecedentes.html" class="btn">Anterior</a>
-        <a href="antecedentes.html" class="btn2">Siguiente</a>
+        <a href="generaciones.html" class="btn2">Siguiente</a>
     </div>
 </body>
 </html>

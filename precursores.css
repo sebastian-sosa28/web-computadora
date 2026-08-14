@@ -1,3 +1,6 @@
+/* ==========================================
+   1. ESTILOS BASE Y RESETS (Tu código original)
+   ========================================== */
 * {
     margin: 0;
     padding: 0;
@@ -5,30 +8,34 @@
 }
 
 body {
-    background-color: #2B5770; /* Fondo negro/azul muy oscuro estilo tech */
+    background-color: #2B5770; /* Fondo azul estilo tech */
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     padding: 20px;
+    padding-top: 90px; /* Espacio extra para que la navbar fija no tape el título */
 }
 
-.titulo{
-    height: 15VH;
+/* Header / Título */
+.titulo {
+    height: 15vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-   
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-.titulo h1{
+.titulo h1 {
     color: #7FE0D4;
-    font-size: 3rem;
+    font-size: 2.8rem;
+    text-shadow: 0 0 10px rgba(127, 224, 212, 0.3);
 }
 
-/* Estilos para la barra de navegación superior */
+/* ==========================================
+   2. BARRA DE NAVEGACIÓN Y MENÚ
+   ========================================== */
 .navbar {
     position: fixed;
     top: 0;
@@ -42,7 +49,6 @@ body {
     border-bottom: 1px solid rgba(0, 240, 255, 0.2);
 }
 
-/* Menú Hamburguesa (Tres rayitas) */
 .menu-container {
     position: relative;
 }
@@ -69,7 +75,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Desplegable oculto por defecto */
 .dropdown-menu {
     position: absolute;
     top: 40px;
@@ -100,12 +105,10 @@ body {
     color: #00f0ff;
 }
 
-/* Al marcar el checkbox, se despliega el menú */
 .menu-checkbox:checked ~ .dropdown-menu {
     max-height: 300px;
 }
 
-/* Apartados al ladito de la barrita */
 .nav-links {
     display: flex;
     gap: 20px;
@@ -125,25 +128,158 @@ body {
     text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background: transparent;
+/* ==========================================
+   3. CONTENIDO PRINCIPAL (Nuevas Secciones)
+   ========================================== */
+.contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/* Estilos de Secciones generales */
+.seccion-precursores,
+.seccion-generaciones,
+.seccion-adicionales {
+    background-color: rgba(19, 27, 46, 0.75);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.seccion-precursores h2,
+.seccion-generaciones h2,
+.seccion-adicionales h2 {
     color: #00f0ff;
-    border: 2px solid #00f0ff;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(0, 240, 255, 0.3);
+    padding-bottom: 8px;
 }
 
-.btn:hover {
-    background-color: #00f0ff;
-    color: #0b0f19;
-    box-shadow: 0 0 15px #00f0ff;
+.introduccion {
+    color: #e2e8f0;
+    font-size: 1rem;
+    margin-bottom: 25px;
 }
 
+/* --- Grid y Tarjetas de Precursores --- */
+.grid-precursores {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-precursor {
+    background-color: #131b2e;
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-precursor:hover {
+    transform: translateY(-5px);
+    border-color: #00f0ff;
+    box-shadow: 0 5px 15px rgba(0, 240, 255, 0.25);
+}
+
+.tarjeta-precursor h3 {
+    color: #7FE0D4;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.tarjeta-precursor p {
+    color: #cbd5e0;
+    font-size: 0.92rem;
+}
+
+.tarjeta-precursor strong {
+    color: #00f0ff;
+}
+
+/* --- Tabla de Generaciones --- */
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto; /* Permite scroll horizontal en celulares */
+    margin-top: 15px;
+}
+
+.tabla-generaciones {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #131b2e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabla-generaciones th,
+.tabla-generaciones td {
+    padding: 14px 18px;
+    text-align: left;
+}
+
+.tabla-generaciones th {
+    background-color: rgba(0, 240, 255, 0.15);
+    color: #00f0ff;
+    font-weight: 600;
+    border-bottom: 2px solid #00f0ff;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.tabla-generaciones td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
+    font-size: 0.92rem;
+}
+
+.tabla-generaciones tbody tr:hover {
+    background-color: rgba(0, 240, 255, 0.05);
+}
+
+.tabla-generaciones tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Bloques Adicionales --- */
+.bloque-adicional {
+    background-color: #131b2e;
+    border-left: 4px solid #00f0ff;
+    border-radius: 0 8px 8px 0;
+    padding: 18px 22px;
+    margin-bottom: 15px;
+}
+
+.bloque-adicional h3 {
+    color: #7FE0D4;
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.bloque-adicional p {
+    color: #cbd5e0;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   4. BOTONES Y PIE DE PÁGINA (Tu código original)
+   ========================================== */
+.botones-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.btn,
 .btn2 {
     display: inline-block;
     padding: 12px 25px;
@@ -154,19 +290,23 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition: all 0.3s ease;
-    
 }
 
+.btn:hover,
 .btn2:hover {
     background-color: #00f0ff;
     color: #0b0f19;
     box-shadow: 0 0 15px #00f0ff;
 }
-/* Contenedor para alinear los botones en medio y lado a lado */
-.botones-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Espacio de separación entre el botón Anterior y Siguiente */
-    margin-top: 20px;
-    width: 100%;
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .titulo h1 {
+        font-size: 2rem;
+    }
+    .seccion-precursores,
+    .seccion-generaciones,
+    .seccion-adicionales {
+        padding: 18px;
+    }
 }

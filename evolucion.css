@@ -276,34 +276,3 @@ tbody tr:hover {
     color: #7FE0D4;
 }
 
-/* Cuadro de Cita Bibliográfica */
-.cita-box {
-    background-color: rgba(11, 15, 25, 0.6);
-    border-left: 4px solid #7FE0D4;
-    padding: 15px;
-    border-radius: 4px;
-}
-
-.cita-box a {
-    color: #00f0ff;
-    text-decoration: underline;
-    word-break: break-all;
-    transition: color 0.2s;
-}
-
-.cita-box a:hover {
-    color: #7FE0D4;
-    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
-}
-
-/* Responsivo para pantallas pequeñas */
-@media (max-width: 768px) {
-    .titulo h1 {
-        font-size: 2rem;
-    }
-    
-    body {
-        padding: 10px;
-        padding-top: 90px;
-    }
-}
