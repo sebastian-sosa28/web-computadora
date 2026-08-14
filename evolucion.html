@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>evolucion</title>
-    <link rel="stylesheet" href="antecedentes.css">
+    <title>Historia del Hardware y Software</title>
+    <link rel="stylesheet" href="evolucion.css">
 </head>
 <body>
-     <!--menu de interaccion-->
-   <!-- Barra de interacción superior -->
+    <!-- Barra de interacción superior -->
     <nav class="navbar">
         <!-- Menú desplegable con las tres rayitas (Hamburguesa) -->
         <div class="menu-container">
@@ -23,30 +22,126 @@
             <ul class="dropdown-menu">
                 <li><a href="antecedentes.html">Antecedentes</a></li>
                 <li><a href="precursores.html">Precursores</a></li>
-                <li><a href="generaciones.html"> Generaciones</a></li>
+                <li><a href="generaciones.html">Generaciones</a></li>
                 <li><a href="componentes.html">Componentes</a></li>
-                <li><a href="evolucion.html"> Hardware y Software</a></li>
+                <li><a href="evolucion.html">Hardware y Software</a></li>
             </ul>
         </div>
 
         <!-- Apartados extras al ladito de la barrita -->
-         <div class="nav-links">
+        <div class="nav-links">
             <a href="index.html">Inicio</a>
             <a href="indice.html">Indice</a>
             <a href="bibliografia.html">bibliografia</a>
         </div>
     </nav>
-    <header class="titulo">
-        <h1>Evolucion del hadware y el software</h1>
 
+    <header class="titulo">
+        <h1>Historia del Hardware y Software</h1>
     </header>
 
+    <main class="contenido-principal">
+        <!-- 1. Conceptos Fundamentales -->
+        <section class="seccion-concepto">
+            <h2>1. Conceptos Fundamentales</h2>
+            <div class="tabla-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Definición Clave</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Hardware</strong></td>
+                            <td>Conjunto de componentes físicos y tangibles de una computadora (CPU, memorias, dispositivos de entrada/salida, almacenamiento y buses).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Software</strong></td>
+                            <td>Conjunto de programas, instrucciones, reglas y datos que permiten la interacción entre el usuario y la máquina para realizar tareas específicas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
+        <!-- 2. Evolución del Hardware -->
+        <section class="seccion-hardware">
+            <h2>2. Evolución del Hardware por Generaciones</h2>
+            
+            <article class="tarjeta-generacion">
+                <h3>Precursores (Antes del Siglo XX)</h3>
+                <p>Instrumentos de cálculo mecánico como el Ábaco, la Tablilla de Salamina, la <strong>Pascalina</strong> de Blaise Pascal y la <strong>Máquina Analítica</strong> de Charles Babbage.</p>
+            </article>
 
+            <article class="tarjeta-generacion">
+                <h3>1.ª Generación (Década de 1950) – Tubos de Vacío (Bulbos)</h3>
+                <ul>
+                    <li><strong>Tecnología:</strong> Uso de bulbos electrónicos para procesar información y tarjetas perforadas para almacenamiento.</li>
+                    <li><strong>Características:</strong> Equipos gigantescos, de alto consumo eléctrico, lentos y propensos a sobrecalentamiento.</li>
+                    <li><strong>Ejemplos:</strong> ENIAC, EDVAC y la <strong>IBM 650</strong>.</li>
+                </ul>
+            </article>
 
-     <div class="botones-container">
+            <article class="tarjeta-generacion">
+                <h3>2.ª Generación (1959–1964) – Transistores</h3>
+                <p>Reemplazo de los bulbos por <strong>transistores</strong>, reduciendo drásticamente el tamaño, costo y calor generado, al tiempo que aumentó la velocidad y fiabilidad.</p>
+            </article>
+
+            <article class="tarjeta-generacion">
+                <h3>3.ª Generación (1965–1970) – Circuitos Integrados (Chips)</h3>
+                <p>Empaquetamiento de miles de transistores en pastillas de silicio. Introducción de la multiprogramación, sistemas operativos incipientes y lenguajes de alto nivel (COBOL, FORTRAN).</p>
+            </article>
+
+            <article class="tarjeta-generacion">
+                <h3>4.ª Generación (1971–1988) – Microprocesadores (LSI y VLSI)</h3>
+                <p>Creación del microprocesador en un solo chip de silicio (como Intel 4004/8080). Nacimiento de la computadora personal (PC), democratizando el acceso a la tecnología.</p>
+            </article>
+
+            <article class="tarjeta-generacion">
+                <h3>5.ª Generación (Desde finales de los 80)</h3>
+                <p>Procesamiento en paralelo, arquitectura multinúcleo, integración de inteligencia artificial y conectividad en red global.</p>
+            </article>
+        </section>
+
+        <!-- 3. Evolución del Software -->
+        <section class="seccion-software">
+            <h2>3. Evolución del Software y Sistemas Operativos</h2>
+            <ol class="lista-software">
+                <li><strong>Código / Lenguaje Máquina:</strong> Instrucciones en código binario (0s y 1s), complejas y dependientes de la arquitectura del equipo.</li>
+                <li><strong>Lenguaje Ensamblado:</strong> Uso de mnemónicos para reemplazar combinaciones binarias, mejorando la legibilidad.</li>
+                <li><strong>Lenguajes de Alto Nivel:</strong> Aparición de lenguajes como FORTRAN, COBOL, BASIC, C, etc., permitiendo portabilidad entre distintos sistemas.</li>
+                <li>
+                    <strong>Sistemas Operativos:</strong>
+                    <ul>
+                        <li>Evolucionaron desde el procesamiento por lotes (<em>batch</em>) hacia sistemas multitarea y multiusuario (UNIX, MS-DOS, Windows, Linux).</li>
+                        <li>Incorporación de Interfaces Gráficas de Usuario (GUI) para hacer el cómputo accesible al público general.</li>
+                    </ul>
+                </li>
+                <li><strong>Software Moderno:</strong> Programación orientada a objetos, aplicaciones distribuidas en la nube y desarrollo de software libre de código abierto.</li>
+            </ol>
+        </section>
+
+        <!-- 4. Hito Histórico UNAM -->
+        <section class="seccion-unam">
+            <h2>4. Hito Histórico: Cómputo en México y la UNAM</h2>
+            <p>Un componente destacado en la historiografía computacional en México es el año <strong>1958</strong>, cuando bajo la gestión del rector Nabor Carrillo y el Ing. Sergio Beltrán, la UNAM adquirió la <strong>IBM 650</strong>, convirtiendo a la universidad en la institución pionera del cómputo académico y científico en el país.</p>
+        </section>
+
+        <!-- 5. Cita Bibliográfica -->
+        <section class="seccion-bibliografia">
+            <h2>5. Cita Bibliográfica</h2>
+            <div class="cita-box">
+                <p><strong>Referencia:</strong> Universidad Nacional Autónoma de México (UNAM). <em>HISTORIA HARDWARE Y SOFTWARE</em>. Material educativo. Recuperado de: <a href="https://www.paginaspersonales.unam.mx/files/490/HISTORIA-HARDWARE_Y_SOFTWARE.pdf" target="_blank" rel="noopener noreferrer">https://www.paginaspersonales.unam.mx/files/490/HISTORIA-HARDWARE_Y_SOFTWARE.pdf</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botones de navegación inferior -->
+    <div class="botones-container">
         <a href="componentes.html" class="btn">Anterior</a>
-        <a href="bibliografia.html" class="btn2">Siguiente</a>
+        <a href="index.html" class="btn2">Siguiente</a>
     </div>
 </body>
 </html>
