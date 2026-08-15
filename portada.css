@@ -14,23 +14,21 @@ body {
     overflow-x: hidden;
 }
 
-/* Barra de navegación */
+/* Estilos para la barra de navegación superior */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: rgba(11, 15, 25, 0.95);
-    backdrop-filter: blur(8px);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
     z-index: 1000;
     border-bottom: 1px solid rgba(0, 240, 255, 0.2);
 }
 
-/* Menú Hamburguesa */
+/* Menú Hamburguesa (Tres rayitas) */
 .menu-container {
     position: relative;
 }
@@ -57,7 +55,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Menú desplegable */
+/* Desplegable oculto por defecto */
 .dropdown-menu {
     position: absolute;
     top: 40px;
@@ -66,11 +64,11 @@ body {
     border: 1px solid #00f0ff;
     border-radius: 5px;
     list-style: none;
-    width: 240px;
+    width: 220px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
+    transition: max-height 0.3s ease-out;
 }
 
 .dropdown-menu li a {
@@ -80,7 +78,7 @@ body {
     text-decoration: none;
     font-size: 0.9rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: background 0.2s, color 0.2s;
+    transition: background 0.2s;
 }
 
 .dropdown-menu li a:hover {
@@ -88,19 +86,16 @@ body {
     color: #00f0ff;
 }
 
-.mobile-only-link {
-    display: none; /* Se activa solo en móviles */
-    border-left: 3px solid #00f0ff;
-}
-
+/* Al marcar el checkbox, se despliega el menú */
 .menu-checkbox:checked ~ .dropdown-menu {
-    max-height: 500px;
+    max-height: 300px;
 }
 
-/* Enlaces horizontales para pantallas grandes */
+/* Apartados al ladito de la barrita */
 .nav-links {
     display: flex;
     gap: 20px;
+    margin-left: 30px;
 }
 
 .nav-links a {
@@ -115,7 +110,6 @@ body {
     color: #00f0ff;
     text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
 }
-
 /* Hero Section / Portada (Tipografía adaptable con clamp) */
 .hero {
     min-height: 100vh;
@@ -171,40 +165,84 @@ body {
 }
 
 /* ==========================================
-   ADAPTACIÓN RESPONSIVA (MÓVILES Y TABLETS)
+   RESPONSIVE DESIGN (MÓVILES / PANTALLAS PEQUEÑAS)
    ========================================== */
 
 @media screen and (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
+  /* Ajuste de contenedor general */
+  body {
+    padding-top: 60px; /* Evita que la navbar oculte el contenido */
+  }
 
-    .navbar {
-        padding: 12px 20px;
-    }
+  /* Barra de navegación */
+  .navbar {
+    padding: 10px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
 
-    /* Ocualtamos la barra horizontal y la pasamos al desplegable */
-    .nav-links {
-        display: none;
-    }
+  /* Ocultar enlaces directos de escritorio */
+  .nav-links {
+    display: none;
+  }
 
-    .mobile-only-link {
-        display: block;
-    }
+  /* Mostrar enlaces adicionales en el menú desplegable */
+  .dropdown-menu .mobile-only-link {
+    display: block;
+  }
 
-    .dropdown-menu {
-        width: 200px;
-    }
+  /* Ajustes del menú desplegable */
+  .dropdown-menu {
+    width: 100%;
+    max-width: 250px;
+    top: 100%;
+    left: 0;
+  }
 
-    .btn {
-        width: 100%;
-        max-width: 280px;
-        text-align: center;
-    }
+  /* Sección Hero / Portada */
+  .hero {
+    min-height: calc(100vh - 60px);
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 10px 0;
+  }
+
+  .pretitulo {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  /* Botón adaptado */
+  .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    margin-top: 15px;
+  }
 }
 
-@media screen and (max-width: 380px) {
-    .dropdown-menu {
-        width: 180px;
-    }
+/* Pantallas extra pequeñas (teléfonos reducidos) */
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
 }
