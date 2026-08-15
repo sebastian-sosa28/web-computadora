@@ -1,265 +1,215 @@
 /* ==========================================
-   RESET Y CONFIGURACIÓN GENERAL (Estilo Tech)
+   RESET Y CONFIGURACIÓN GENERAL
    ========================================== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #2B5770; /* Fondo azul estilo tech del 2do diseño */
-  color: #ffffff;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-top: 80px; /* Ajuste para navbar fija */
+    background-color: #121927; /* Fondo azul noche oscuro */
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ==========================================
    BARRA DE NAVEGACIÓN (NAVBAR)
    ========================================== */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: rgba(11, 15, 25, 0.95); /* Fondo oscuro con transparencia */
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0b0f19;
+    display: flex;
+    justify-content: flex-start; /* Alinea todo el contenido hacia la izquierda */
+    align-items: center;
+    padding: 12px 30px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.15);
 }
 
-/* --- Menú Hamburguesa & Dropdown --- */
 .menu-container {
-  position: relative;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
-/* Ocultamos el checkbox real */
 .menu-checkbox {
-  display: none;
+    display: none;
 }
 
-/* Estilo del icono de 3 rayitas */
 .menu-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    cursor: pointer;
 }
 
 .menu-icon span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: #00f0ff; /* Cyan Neón */
-  border-radius: 2px;
-  transition: all 0.3s ease;
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #00f0ff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
-.menu-icon:hover span {
-  background-color: #7FE0D4;
-  box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
-}
-
-/* Animación de la X cuando el menú está abierto */
-.menu-checkbox:checked + .menu-icon span:nth-child(1) {
-  transform: translateY(9.5px) rotate(45deg);
-}
-
-.menu-checkbox:checked + .menu-icon span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-checkbox:checked + .menu-icon span:nth-child(3) {
-  transform: translateY(-9.5px) rotate(-45deg);
-}
-
-/* Menú desplegable flotante */
+/* Menú Desplegable */
 .dropdown-menu {
-  position: absolute;
-  top: calc(100% + 15px);
-  left: 0;
-  background: #131b2e; /* Fondo tarjetas tech */
-  border: 1px solid #00f0ff;
-  border-radius: 8px;
-  list-style: none;
-  min-width: 220px;
-  padding: 0.5rem 0;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  
-  /* Estado oculto inicial con animación */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Mostrar el menú al activar el checkbox */
-.menu-checkbox:checked ~ .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: #131b2e;
+    border: 1px solid #00f0ff;
+    border-radius: 6px;
+    list-style: none;
+    width: 230px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
 }
 
 .dropdown-menu li a {
-  display: block;
-  padding: 0.75rem 1.25rem;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 400;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.2s ease;
+    display: block;
+    padding: 12px 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s, color 0.2s;
 }
 
 .dropdown-menu li a:hover {
-  background: rgba(0, 240, 255, 0.1);
-  color: #00f0ff;
-  padding-left: 1.6rem;
+    background-color: rgba(0, 240, 255, 0.1);
+    color: #00f0ff;
 }
 
-/* --- Enlaces directos de la Navbar --- */
+.menu-checkbox:checked ~ .dropdown-menu {
+    max-height: 300px;
+}
+
+/* Enlaces al lado de las tres líneas */
 .nav-links {
-  display: flex;
-  gap: 1.5rem;
+    display: flex;
+    gap: 20px;
+    margin-left: 25px; /* Espacio de separación respecto al menú hamburguesa */
 }
 
 .nav-links a {
-  color: #a0aec0;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-  position: relative;
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: #00f0ff;
-  transition: width 0.3s ease;
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00f0ff;
+}
+/* Enlaces a la derecha */
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  color: #00f0ff;
-  text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
-}
-
-.nav-links a:hover::after {
-  width: 100%;
+    color: #00f0ff;
 }
 
 /* ==========================================
-   SECCIÓN HERO / CONTENIDO PRINCIPAL
+   CONTENEDOR Y BLOQUES (ESTILO 2DA CAPTURA)
    ========================================== */
-.hero {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgba(19, 27, 46, 0.75); /* Contenedor traslúcido tech */
-  border: 1px solid rgba(0, 240, 255, 0.2);
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
+.main-container {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 100px 20px 40px 20px; /* Margen para no chocar con el navbar */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #7FE0D4;
-  text-shadow: 0 0 10px rgba(127, 224, 212, 0.3);
+/* Estilo exacto de las tarjetas en bloque */
+.card {
+    background: #182234; /* Tarjeta oscura */
+    border-left: 4px solid #00f0ff; /* Línea de acento cyan */
+    padding: 22px 28px;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Estilo de tarjetas tipo bloques adicionales */
-.subtitle {
-  background: #131b2e;
-  border-left: 4px solid #00f0ff;
-  border-radius: 0 8px 8px 0;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.25rem;
-  width: 100%;
-  color: #cbd5e0;
-  font-size: 1.05rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 240, 255, 0.12);
 }
 
-.subtitle:hover {
-  transform: translateX(4px);
-  border-left-color: #7FE0D4;
-  box-shadow: 0 5px 15px rgba(0, 240, 255, 0.15);
+.card h2 {
+    color: #00f0ff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-.subtitle strong {
-  color: #00f0ff;
-  font-weight: 700;
+.card p {
+    color: #cbd5e0;
+    font-size: 0.92rem;
+    line-height: 1.6;
 }
 
-.subtitle em {
-  color: #ff5370; /* Color de acento ajustado al modo oscuro */
-  font-style: normal;
-  font-weight: 700;
+.card strong {
+    color: #00f0ff;
+    font-weight: 700;
+}
+
+.card em {
+    color: #ff5370; /* Resaltado rosa/rojo suave */
+    font-style: normal;
+    font-weight: 700;
 }
 
 /* ==========================================
-   BOTONES DE NAVEGACIÓN Y PIE DE PÁGINA
+   BOTONES INFERIORES
    ========================================== */
 .botones-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
 }
 
-.btn,
-.btn2 {
-  display: inline-block;
-  padding: 12px 25px;
-  background: transparent;
-  color: #00f0ff;
-  border: 2px solid #00f0ff;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+.btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: transparent;
+    color: #00f0ff;
+    border: 1.5px solid #00f0ff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
 }
 
-.btn:hover,
-.btn2:hover {
-  background-color: #00f0ff;
-  color: #0b0f19;
-  box-shadow: 0 0 15px #00f0ff;
-}
-
-/* Ajustes responsivos */
-@media (max-width: 768px) {
-  .hero {
-    padding: 1.5rem;
-    margin: 1rem;
-  }
-  
-  .hero h1 {
-    font-size: 2rem;
-  }
+.btn:hover {
+    background-color: #00f0ff;
+    color: #0b0f19;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
 }

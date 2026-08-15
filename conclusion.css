@@ -10,8 +10,8 @@
     --text-primary: #f8fafc;      /* Texto principal */
     --text-secondary: #94a3b8;    /* Texto secundario */
     --border-color: #334155;      /* Bordes sutiles */
-    --radius: 10px;               /* Bordes redondeados */
-    --transition: all 0.25s ease; /* Transiciones suaves */
+    --radius: 12px;               /* Bordes redondeados más pronunciados */
+    --transition: all 0.3s ease;  /* Transiciones más suaves */
 }
 
 * {
@@ -21,11 +21,11 @@
 }
 
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Tipografía más moderna */
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    line-height: 1.6;
-    padding-top: 75px; /* Espacio para la barra de navegación superior */
+    line-height: 1.7; /* Mayor espaciado entre líneas */
+    padding-top: 85px; /* Más espacio para la barra de navegación */
 }
 
 /* ==========================================================================
@@ -36,15 +36,15 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px;
-    background-color: rgba(30, 41, 59, 0.95);
-    backdrop-filter: blur(8px);
+    height: 70px; /* Un poco más alta */
+    background-color: rgba(30, 41, 59, 0.9);
+    backdrop-filter: blur(12px); /* Blur más intenso */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1.5rem;
+    padding: 0 2rem; /* Más padding lateral */
     z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5); /* Borde más sutil */
 }
 
 .menu-container {
@@ -61,65 +61,99 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 24px;
-    height: 18px;
+    width: 26px; /* Un poco más grande */
+    height: 20px;
     cursor: pointer;
 }
 
 .menu-icon span {
-    height: 2px;
+    height: 3px; /* Líneas un poco más gruesas */
     width: 100%;
     background-color: var(--text-primary);
-    border-radius: 2px;
+    border-radius: 3px;
     transition: var(--transition);
 }
 
 /* Menú Desplegable */
 .dropdown-menu {
     position: absolute;
-    top: 45px;
-    left: 0;
+    top: 55px; /* Ajuste para la navbar más alta */
+    left: -10px; /* Pequeño ajuste de posición */
     background-color: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: var(--radius);
-    padding: 0.5rem 0;
+    padding: 1rem 0; /* Más padding vertical */
     list-style: none;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
     display: none;
     flex-direction: column;
-    min-width: 190px;
+    min-width: 210px; /* Un poco más ancho */
+    opacity: 0; /* Para la animación de entrada */
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-menu li {
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.dropdown-menu li:nth-child(1) { animation-delay: 0.05s; }
+.dropdown-menu li:nth-child(2) { animation-delay: 0.1s; }
+.dropdown-menu li:nth-child(3) { animation-delay: 0.15s; }
+.dropdown-menu li:nth-child(4) { animation-delay: 0.2s; }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .dropdown-menu li a {
     display: block;
-    padding: 0.6rem 1.2rem;
+    padding: 0.8rem 1.5rem; /* Más padding */
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1rem; /* Un poco más grande */
     transition: var(--transition);
 }
 
 .dropdown-menu li a:hover {
-    background-color: var(--bg-surface-hover);
+    background-color: rgba(56, 189, 248, 0.1); /* Fondo azul sutil al hover */
     color: var(--accent-color);
 }
 
 /* Mostrar menú cuando el checkbox está activo */
 .menu-checkbox:checked ~ .dropdown-menu {
     display: flex;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Enlaces superiores derechos */
 .nav-links {
     display: flex;
-    gap: 1.2rem;
+    gap: 1.5rem; /* Más espacio */
 }
 
 .nav-links a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
+    position: relative; /* Para el efecto de underline */
+    transition: var(--transition);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
     transition: var(--transition);
 }
 
@@ -127,107 +161,142 @@ body {
     color: var(--accent-color);
 }
 
+.nav-links a:hover::after {
+    width: 100%;
+}
+
 /* ==========================================================================
    3. ESTRUCTURA DE TEXTO Y CONTENIDO
    ========================================================================== */
 .titulo {
     text-align: center;
-    padding: 1.5rem 1rem 1rem;
+    padding: 2rem 1rem 1.5rem;
 }
 
 .titulo h1 {
-    font-size: 1.8rem;
+    font-size: 2.2rem; /* Más grande */
     color: var(--accent-color);
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.5); /* Efecto neón sutil */
 }
 
 .contenido {
-    max-width: 800px;
+    max-width: 850px; /* Un poco más ancho */
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 2.5rem; /* Más espacio entre secciones */
 }
 
 section h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--text-primary);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.3rem;
+    border-bottom: 2px solid var(--border-color); /* Borde más grueso */
+    padding-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+section h2::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 24px;
+    background-color: var(--accent-color);
+    border-radius: 4px;
 }
 
 section p {
     color: var(--text-secondary);
-    font-size: 0.98rem;
+    font-size: 1.05rem; /* Un poco más grande */
     text-align: justify;
+    margin-bottom: 1rem;
 }
 
 /* Bloque destacado para la Síntesis Final */
 .bloque-adicional {
     background-color: var(--bg-surface);
-    border-left: 3px solid var(--accent-color);
+    border-left: 4px solid var(--accent-color); /* Borde más grueso */
     border-radius: 0 var(--radius) var(--radius) 0;
-    padding: 1.2rem;
+    padding: 1.5rem; /* Más padding */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .bloque-adicional h3 {
     color: var(--accent-color);
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
 }
 
 .bloque-adicional p {
     color: var(--text-primary);
-    font-size: 0.98rem;
+    font-size: 1.05rem;
 }
 
 /* ==========================================================================
    4. BOTONES DE NAVEGACIÓN INFERIOR
    ========================================================================== */
 .botones-container {
-    max-width: 800px;
-    margin: 2.5rem auto 3rem;
-    padding: 0 1rem;
+    max-width: 850px;
+    margin: 3.5rem auto 4rem; /* Más margen */
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .btn, .btn2 {
     display: inline-block;
-    padding: 0.6rem 1.5rem;
+    padding: 0.8rem 2rem; /* Más padding */
     border-radius: var(--radius);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 1rem;
     transition: var(--transition);
     text-align: center;
-}
-
-.btn {
-    background-color: transparent;
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-}
-
-.btn:hover {
-    background-color: var(--bg-surface-hover);
-}
-
-.btn2 {
     background-color: var(--accent-color);
     color: var(--bg-primary);
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3); /* Sombra sutil */
 }
 
-.btn2:hover {
+.btn:hover, .btn2:hover {
     background-color: var(--accent-hover);
+    transform: translateY(-2px); /* Efecto de elevación al hover */
+    box-shadow: 0 6px 15px rgba(56, 189, 248, 0.4);
 }
 
 /* Adaptación para pantallas pequeñas */
 @media (max-width: 600px) {
+    body {
+        padding-top: 75px;
+    }
+    
+    .navbar {
+        height: 60px;
+        padding: 0 1rem;
+    }
+    
+    .nav-links {
+        display: none; /* Ocultar enlaces en móvil */
+    }
+    
+    .titulo h1 {
+        font-size: 1.8rem;
+    }
+    
+    .contenido {
+        gap: 2rem;
+    }
+    
+    section h2 {
+        font-size: 1.3rem;
+    }
+    
     .botones-container {
         flex-direction: column;
+        gap: 1rem;
     }
     
     .btn, .btn2 {

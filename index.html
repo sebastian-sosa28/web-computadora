@@ -4,54 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Computadora</title>
-    <!-- Importamos una fuente moderna tipo Tech -->
+    <!-- Fuente moderna tipo Tech -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="portada.css">
 </head>
 <body>
 
-   <!--menu de interaccion-->
-   <!-- Barra de interacción superior -->
+    <!-- Barra de navegación superior -->
     <nav class="navbar">
-        <!-- Menú desplegable con las tres rayitas (Hamburguesa) -->
+        <!-- Menú desplegable hamburguesa -->
         <div class="menu-container">
             <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-            <label for="menu-toggle" class="menu-icon">
+            <label for="menu-toggle" class="menu-icon" aria-label="Abrir menú">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <!-- Opciones que se desglosan al hacer clic en las rayitas -->
+            <!-- Opciones desplegables -->
             <ul class="dropdown-menu">
                 <li><a href="antecedentes.html">Antecedentes</a></li>
                 <li><a href="precursores.html">Precursores</a></li>
-                <li><a href="generaciones.html"> Generaciones</a></li>
+                <li><a href="generaciones.html">Generaciones</a></li>
                 <li><a href="componentes.html">Componentes</a></li>
-                <li><a href="evolucion.html"> Hardware y Software</a></li>
+                <li><a href="evolucion.html">Hardware y Software</a></li>
+                <!-- Enlaces extras visibles en el desplegable en móviles -->
+                <li class="mobile-only-link"><a href="index.html">Inicio</a></li>
+                <li class="mobile-only-link"><a href="indice.html">Índice</a></li>
+                <li class="mobile-only-link"><a href="bibliografia.html">Bibliografía</a></li>
             </ul>
         </div>
 
-        <!-- Apartados extras al ladito de la barrita -->
-       <div class="nav-links">
+        <!-- Apartados extras para escritorio -->
+        <div class="nav-links">
             <a href="index.html">Inicio</a>
-            <a href="indice.html">Indice</a>
-            <a href="bibliografia.html">bibliografia</a>
+            <a href="indice.html">Índice</a>
+            <a href="bibliografia.html">Bibliografía</a>
         </div>
     </nav>
 
     <!-- Sección de Portada -->
-
     <header class="hero">
-        <h2 class="pretitulo">EXPLORNADO SOBRE</h1>
+        <h2 class="pretitulo">EXPLORANDO SOBRE</h2>
         <h1>LA COMPUTADORA</h1>
-        <p class="subtitle">Cibernetica I</p>
+        <p class="subtitle">Cibernética I</p>
         <p class="subtitle">5to semestre</p>
-        <p class="subtitle">Alumnos: Sebastian Sosa Saucedo, Jose Santiago Jaimes Gonzales, Marcos Aguirre Soto </p>
-        <p class="subtitle">Profesora: paula Aida Meza Santana</p>
-        <p class="subtitle"> Escuela: Prepa Lic. Benito Juarez </p>
-       
+        <p class="subtitle">Alumnos: Sebastian Sosa Saucedo, Jose Santiago Jaimes Gonzales, Marcos Aguirre Soto</p>
+        <p class="subtitle">Profesora: Paula Aida Meza Santana</p>
+        <p class="subtitle">Escuela: Prepa Lic. Benito Juárez</p>
+        
         <a href="introduccion.html" class="btn">Empezar Exposición</a>
     </header>
+
 </body>
 </html>
