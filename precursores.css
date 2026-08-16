@@ -1,5 +1,5 @@
 /* ==========================================
-   1. ESTILOS BASE Y RESETS (Tu código original)
+   1. ESTILOS BASE Y RESETS
    ========================================== */
 * {
     margin: 0;
@@ -8,15 +8,30 @@
 }
 
 body {
-    background-color: #2B5770; /* Fondo azul estilo tech */
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     padding: 20px;
-    padding-top: 90px; /* Espacio extra para que la navbar fija no tape el título */
+    padding-top: 90px;
+    min-height: 100vh;
+
+    /* 
+       FONDO CIBERNÉTICO CON ILUMINACIÓN NEÓN Y PATRÓN DE CIRCUITO
+    */
+    background-color: #050a14;
+    background-image: 
+        /* Destellos cyan y azules tecnológicos */
+        radial-gradient(circle at 85% 15%, rgba(0, 240, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 15% 85%, rgba(0, 150, 255, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(10, 25, 50, 0.8) 0%, #050a14 100%),
+        /* Malla simulando tarjeta de circuitos */
+        linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+    background-attachment: fixed;
 }
 
-/* Header / Título */
+/* Header / Título Principal */
 .titulo {
     height: 15vh;
     display: flex;
@@ -28,9 +43,27 @@ body {
 }
 
 .titulo h1 {
-    color: #7FE0D4;
+    color: #ffffff;
     font-size: 2.8rem;
-    text-shadow: 0 0 10px rgba(127, 224, 212, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+/* Línea de resplandor neón bajo el título */
+.titulo h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 3px;
+    background-color: #00f0ff;
+    border-radius: 2px;
+    box-shadow: 0 0 12px #00f0ff, 0 0 4px #00f0ff;
 }
 
 /* ==========================================
@@ -41,12 +74,14 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(11, 15, 25, 0.95);
+    background-color: rgba(7, 13, 26, 0.85);
+    backdrop-filter: blur(8px); /* Efecto vidrio ahumado */
     display: flex;
     align-items: center;
     padding: 15px 30px;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.25);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .menu-container {
@@ -73,18 +108,19 @@ body {
     background-color: #00f0ff;
     border-radius: 2px;
     transition: all 0.3s ease;
+    box-shadow: 0 0 6px rgba(0, 240, 255, 0.6);
 }
 
 .dropdown-menu {
     position: absolute;
     top: 40px;
     left: 0;
-    background-color: #131b2e;
+    background-color: #0b1324;
     border: 1px solid #00f0ff;
-    border-radius: 5px;
+    border-radius: 6px;
     list-style: none;
     width: 220px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 25px rgba(0, 240, 255, 0.25);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
@@ -97,11 +133,11 @@ body {
     text-decoration: none;
     font-size: 0.9rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
 }
 
 .dropdown-menu li a:hover {
-    background-color: rgba(0, 240, 255, 0.1);
+    background-color: rgba(0, 240, 255, 0.15);
     color: #00f0ff;
 }
 
@@ -120,16 +156,16 @@ body {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
-    transition: color 0.2s;
+    transition: color 0.2s, text-shadow 0.2s;
 }
 
 .nav-links a:hover {
     color: #00f0ff;
-    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.7);
 }
 
 /* ==========================================
-   3. CONTENIDO PRINCIPAL (Nuevas Secciones)
+   3. CONTENIDO PRINCIPAL
    ========================================== */
 .contenido {
     max-width: 1200px;
@@ -141,13 +177,13 @@ body {
 .seccion-precursores,
 .seccion-generaciones,
 .seccion-adicionales {
-    background-color: rgba(19, 27, 46, 0.75);
+    background-color: rgba(13, 22, 38, 0.85);
     border: 1px solid rgba(0, 240, 255, 0.2);
     border-radius: 12px;
     padding: 30px;
     margin-bottom: 40px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 240, 255, 0.08);
+    backdrop-filter: blur(8px);
 }
 
 .seccion-precursores h2,
@@ -158,10 +194,11 @@ body {
     margin-bottom: 15px;
     border-bottom: 2px solid rgba(0, 240, 255, 0.3);
     padding-bottom: 8px;
+    text-shadow: 0 0 6px rgba(0, 240, 255, 0.4);
 }
 
 .introduccion {
-    color: #e2e8f0;
+    color: #cbd5e0;
     font-size: 1rem;
     margin-bottom: 25px;
 }
@@ -174,8 +211,9 @@ body {
 }
 
 .tarjeta-precursor {
-    background-color: #131b2e;
-    border: 1px solid rgba(0, 240, 255, 0.15);
+    background-color: #0d1626;
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-left: 4px solid #00f0ff;
     border-radius: 8px;
     padding: 20px;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -184,11 +222,11 @@ body {
 .tarjeta-precursor:hover {
     transform: translateY(-5px);
     border-color: #00f0ff;
-    box-shadow: 0 5px 15px rgba(0, 240, 255, 0.25);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
 }
 
 .tarjeta-precursor h3 {
-    color: #7FE0D4;
+    color: #00f0ff;
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
@@ -199,22 +237,23 @@ body {
 }
 
 .tarjeta-precursor strong {
-    color: #00f0ff;
+    color: #ffffff;
 }
 
 /* --- Tabla de Generaciones --- */
 .tabla-contenedor {
     width: 100%;
-    overflow-x: auto; /* Permite scroll horizontal en celulares */
+    overflow-x: auto;
     margin-top: 15px;
 }
 
 .tabla-generaciones {
     width: 100%;
     border-collapse: collapse;
-    background-color: #131b2e;
+    background-color: #0d1626;
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid rgba(0, 240, 255, 0.2);
 }
 
 .tabla-generaciones th,
@@ -224,7 +263,7 @@ body {
 }
 
 .tabla-generaciones th {
-    background-color: rgba(0, 240, 255, 0.15);
+    background-color: rgba(0, 240, 255, 0.12);
     color: #00f0ff;
     font-weight: 600;
     border-bottom: 2px solid #00f0ff;
@@ -234,13 +273,13 @@ body {
 }
 
 .tabla-generaciones td {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    color: #e2e8f0;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+    color: #cbd5e0;
     font-size: 0.92rem;
 }
 
 .tabla-generaciones tbody tr:hover {
-    background-color: rgba(0, 240, 255, 0.05);
+    background-color: rgba(0, 240, 255, 0.08);
 }
 
 .tabla-generaciones tbody tr:last-child td {
@@ -249,15 +288,22 @@ body {
 
 /* --- Bloques Adicionales --- */
 .bloque-adicional {
-    background-color: #131b2e;
+    background-color: #0d1626;
+    border: 1px solid rgba(0, 240, 255, 0.15);
     border-left: 4px solid #00f0ff;
     border-radius: 0 8px 8px 0;
     padding: 18px 22px;
     margin-bottom: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bloque-adicional:hover {
+    transform: translateX(4px);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
 }
 
 .bloque-adicional h3 {
-    color: #7FE0D4;
+    color: #00f0ff;
     font-size: 1.15rem;
     margin-bottom: 8px;
 }
@@ -268,7 +314,7 @@ body {
 }
 
 /* ==========================================
-   4. BOTONES Y PIE DE PÁGINA (Tu código original)
+   4. BOTONES Y PIE DE PÁGINA
    ========================================== */
 .botones-container {
     display: flex;
@@ -282,24 +328,27 @@ body {
 .btn,
 .btn2 {
     display: inline-block;
-    padding: 12px 25px;
-    background: transparent;
+    padding: 10px 28px;
+    background: rgba(13, 22, 38, 0.8);
     color: #00f0ff;
-    border: 2px solid #00f0ff;
-    border-radius: 5px;
+    border: 1.5px solid #00f0ff;
+    border-radius: 20px; /* Estilo redondeado uniforme */
     text-decoration: none;
     font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
 }
 
 .btn:hover,
 .btn2:hover {
     background-color: #00f0ff;
-    color: #0b0f19;
-    box-shadow: 0 0 15px #00f0ff;
+    color: #050a14;
+    box-shadow: 0 0 18px rgba(0, 240, 255, 0.6);
 }
 
-/* Ajustes responsivos para pantallas pequeñas */
+/* Ajustes responsivos */
 @media (max-width: 768px) {
     .titulo h1 {
         font-size: 2rem;

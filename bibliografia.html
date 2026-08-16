@@ -77,5 +77,52 @@
         <a href="conclusion.html" class="btn">Anterior</a>
         <a href="index.html" class="btn2">Siguiente</a>
     </div>
+
+
+<script>
+  document.addEventListener('keydown', function(event) {
+    // Definimos a dónde irá cada flecha lateral
+    // Reemplaza 'pagina_anterior.html' y 'pagina_siguiente.html' con los nombres reales de tus archivos
+    const PAGINA_ANTERIOR = 'evolucion.html'; 
+    const PAGINA_SIGUIENTE = 'index.html'; 
+
+    switch (event.key) {
+      case 'ArrowLeft':
+        // Flecha Izquierda -> Ir a la página anterior
+        if (PAGINA_ANTERIOR) {
+          window.location.href = PAGINA_ANTERIOR;
+        }
+        break;
+
+      case 'ArrowRight':
+        // Flecha Derecha -> Ir a la página siguiente
+        if (PAGINA_SIGUIENTE) {
+          window.location.href = PAGINA_SIGUIENTE;
+        }
+        break;
+
+      case 'ArrowDown':
+        // Flecha Abajo -> Bajar suavemente dentro de la misma página
+        event.preventDefault(); // Evita saltos bruscos
+        window.scrollBy({
+          top: 300, // Ajusta la distancia de bajada en píxeles
+          behavior: 'smooth'
+        });
+        break;
+
+      case 'ArrowUp':
+        // Flecha Arriba -> Subir suavemente dentro de la misma página
+        event.preventDefault();
+        window.scrollBy({
+          top: -300, // Ajusta la distancia de subida en píxeles
+          behavior: 'smooth'
+        });
+        break;
+    }
+  });
+</script>
+
+
+
 </body>
 </html>

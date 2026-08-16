@@ -22,9 +22,9 @@
             <ul class="dropdown-menu">
                 <li><a href="antecedentes.html">Antecedentes</a></li>
                 <li><a href="#precursores">Precursores</a></li>
-                <li><a href="#generaciones">Generaciones</a></li>
-                <li><a href="#adicionales">Avances e Historia</a></li>
-                <li><a href="hardware.html">Hardware y Software</a></li>
+                <li><a href="generaciones.html">Generaciones</a></li>
+                <li><a href="componentes.html">componentes</a></li>
+                <li><a href="evolucion.html">Hardware y Software</a></li>
             </ul>
         </div>
 
@@ -162,5 +162,54 @@
         <a href="antecedentes.html" class="btn">Anterior</a>
         <a href="generaciones.html" class="btn2">Siguiente</a>
     </div>
+
+
+
+
+<script>
+  document.addEventListener('keydown', function(event) {
+    // Definimos a dónde irá cada flecha lateral
+    // Reemplaza 'pagina_anterior.html' y 'pagina_siguiente.html' con los nombres reales de tus archivos
+    const PAGINA_ANTERIOR = 'antecedentes.html'; 
+    const PAGINA_SIGUIENTE = 'generaciones.html'; 
+
+    switch (event.key) {
+      case 'ArrowLeft':
+        // Flecha Izquierda -> Ir a la página anterior
+        if (PAGINA_ANTERIOR) {
+          window.location.href = PAGINA_ANTERIOR;
+        }
+        break;
+
+      case 'ArrowRight':
+        // Flecha Derecha -> Ir a la página siguiente
+        if (PAGINA_SIGUIENTE) {
+          window.location.href = PAGINA_SIGUIENTE;
+        }
+        break;
+
+      case 'ArrowDown':
+        // Flecha Abajo -> Bajar suavemente dentro de la misma página
+        event.preventDefault(); // Evita saltos bruscos
+        window.scrollBy({
+          top: 300, // Ajusta la distancia de bajada en píxeles
+          behavior: 'smooth'
+        });
+        break;
+
+      case 'ArrowUp':
+        // Flecha Arriba -> Subir suavemente dentro de la misma página
+        event.preventDefault();
+        window.scrollBy({
+          top: -300, // Ajusta la distancia de subida en píxeles
+          behavior: 'smooth'
+        });
+        break;
+    }
+  });
+</script>
+
+
+
 </body>
 </html>

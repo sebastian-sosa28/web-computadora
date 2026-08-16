@@ -41,35 +41,40 @@
     <!-- Contenedor Principal (Bloques verticales centrados) -->
     <main class="main-container">
         
-        <!-- Bloque 1: Concepto Principal -->
+        <!-- Título principal de la página -->
+        <header class="header-pagina">
+            <h1>Introducción a la Computadora</h1>
+        </header>
+
+        <!-- Bloque 1: Importancia y Función -->
         <section class="card">
-            <h2>Concepto General</h2>
+            <h2>La Computadora en la Sociedad Actual</h2>
             <p>
-                La <strong>computadora</strong> es una máquina electrónica digital programable que ejecuta un conjunto de instrucciones para procesar datos de entrada, realizar operaciones lógicas y aritméticas a gran velocidad, y transformarlos en información útil de salida.
+                La <strong>computadora</strong> es una de las herramientas tecnológicas más importantes de la sociedad actual, ya que permite procesar, almacenar y transmitir grandes cantidades de información de manera rápida y eficiente. Sin embargo, su desarrollo no ocurrió de manera inmediata, sino que fue resultado de una larga evolución que comenzó con antiguos instrumentos utilizados para realizar cálculos, como el <em>ábaco</em>.
             </p>
         </section>
 
-        <!-- Bloque 2: Arquitectura -->
+        <!-- Bloque 2: Antecedentes e Inventos Clave -->
         <section class="card">
-            <h2>Arquitectura Básica</h2>
+            <h2>Primeros Inventos y Avances Tecnológicos</h2>
             <p>
-                Su funcionamiento se basa en la arquitectura de Von Neumann, compuesta por el <strong>Hardware</strong> (CPU, Memoria RAM y periféricos de E/S) y el <strong>Software</strong> (Sistema Operativo y aplicaciones de usuario).
+                Posteriormente surgieron inventos como la <strong>Pascalina de Blaise Pascal</strong> y la <strong>máquina analítica de Charles Babbage</strong>, considerada un antecedente fundamental de la computación moderna. Durante los siglos XIX y XX, los avances tecnológicos permitieron crear máquinas cada vez más rápidas, pequeñas y eficientes.
             </p>
         </section>
 
-        <!-- Bloque 3: Evolución -->
+        <!-- Bloque 3: Transformación Tecnológica -->
         <section class="card">
-            <h2>Evolución Tecnológica</h2>
+            <h2>Evolución de los Componentes</h2>
             <p>
-                Ha evolucionado a través de distintas generaciones: desde los voluminosos <em>tubos de vacío</em> y <em>transistores</em>, pasando por los <em>circuitos integrados</em>, hasta la era actual de los <em>microprocesadores</em>, la computación distribuida y la <em>inteligencia artificial</em>.
+                La aparición de las primeras computadoras electrónicas y, posteriormente, de los <em>transistores</em>, <em>circuitos integrados</em> y <em>microprocesadores</em>, transformó por completo la manera de procesar información. Con el paso del tiempo, las computadoras dejaron de ser máquinas enormes utilizadas principalmente en instituciones científicas y militares para convertirse en dispositivos accesibles para millones de personas.
             </p>
         </section>
 
-        <!-- Bloque 4: Clasificación -->
+        <!-- Bloque 4: La Computadora Hoy y el Futuro -->
         <section class="card">
-            <h2>Clasificación Actual</h2>
+            <h2>El Presente y Futuro de la Computación</h2>
             <p>
-                Hoy en día se clasifican según su capacidad y uso en <strong>Supercomputadoras</strong>, <strong>Mainframes</strong>, <strong>Computadoras Personales (PC)</strong> y <strong>Sistemas Embebidos</strong> integrados en dispositivos cotidianos.
+                En la actualidad, la evolución de la computadora continúa con tecnologías como los <strong>teléfonos inteligentes</strong>, la <strong>inteligencia artificial</strong> y la <strong>computación cuántica</strong>. Por ello, conocer sus antecedentes históricos permite comprender cómo una necesidad humana tan antigua como realizar cálculos y manejar información dio origen a una tecnología que actualmente forma parte fundamental de la educación, el trabajo, la comunicación y la vida cotidiana.
             </p>
         </section>
 
@@ -80,6 +85,52 @@
         </div>
 
     </main>
+
+
+
+<script>
+  document.addEventListener('keydown', function(event) {
+    // Definimos a dónde irá cada flecha lateral
+    // Reemplaza 'pagina_anterior.html' y 'pagina_siguiente.html' con los nombres reales de tus archivos
+    const PAGINA_ANTERIOR = 'index.html'; 
+    const PAGINA_SIGUIENTE = 'indice.html'; 
+
+    switch (event.key) {
+      case 'ArrowLeft':
+        // Flecha Izquierda -> Ir a la página anterior
+        if (PAGINA_ANTERIOR) {
+          window.location.href = PAGINA_ANTERIOR;
+        }
+        break;
+
+      case 'ArrowRight':
+        // Flecha Derecha -> Ir a la página siguiente
+        if (PAGINA_SIGUIENTE) {
+          window.location.href = PAGINA_SIGUIENTE;
+        }
+        break;
+
+      case 'ArrowDown':
+        // Flecha Abajo -> Bajar suavemente dentro de la misma página
+        event.preventDefault(); // Evita saltos bruscos
+        window.scrollBy({
+          top: 300, // Ajusta la distancia de bajada en píxeles
+          behavior: 'smooth'
+        });
+        break;
+
+      case 'ArrowUp':
+        // Flecha Arriba -> Subir suavemente dentro de la misma página
+        event.preventDefault();
+        window.scrollBy({
+          top: -300, // Ajusta la distancia de subida en píxeles
+          behavior: 'smooth'
+        });
+        break;
+    }
+  });
+</script>
+
 
 </body>
 </html>
