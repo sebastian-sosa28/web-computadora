@@ -662,17 +662,20 @@ tbody tr:hover {
 
 
 
-/* Adaptación para pantallas pequeñas */
-
+/* Adaptación responsive para pantallas de móvil */
 @media (max-width: 768px) {
-
-    .nav-links {
-
-        display: none;
-
+    .titulo h1 {
+        font-size: 2rem;
     }
 
-} 
+    .generacion-card {
+        padding: 18px;
+    }
+
+    .nav-links {
+        display: none; /* Oculta los enlaces de texto en móviles para evitar amontonamiento */
+    }
+}
 
 /* Oculta el cursor por defecto en toda la página */
 * {
