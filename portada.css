@@ -139,6 +139,8 @@ body {
     align-items: center;
     text-align: center;
     padding: 100px 20px 40px 20px;
+    position: relative;
+    z-index: 2; /* Mantiene el contenido por encima del código binario */
 }
 
 /* clamp(tamaño_mínimo, tamaño_ideal, tamaño_máximo) */
@@ -267,10 +269,6 @@ body {
   }
 }
 
-
-
-
-
 /* ==========================================
    ANIMACIÓN DE CORTOCIRCUITO / GLITCH (TÍTULOS)
    ========================================== */
@@ -390,3 +388,88 @@ body {
         opacity: 0.4; /* Parpadeo de "foco roto" */
     }
 }
+
+/* ==========================================
+   LLUVIA DE CÓDIGO BINARIO POR TODA LA PANTALLA
+   ========================================== */
+
+/* Estilos base para todas las columnas de código */
+.binario-columna {
+    position: fixed;
+    top: -100vh;
+    font-family: monospace;
+    font-size: 1rem;
+    line-height: 1.2;
+    white-space: pre;
+    pointer-events: none; /* Evita que bloquee clics en botones/enlaces */
+    z-index: 0; /* Detrás del contenido para no dificultar la lectura */
+    color: rgba(0, 240, 255, 0.35);
+    text-shadow: 0 0 6px rgba(0, 240, 255, 0.4);
+}
+
+/* Distribución horizontal y configuración individual de cada columna */
+.binario-columna:nth-child(1) { left: 5%;  animation: caerBinario 6s linear infinite 0s; }
+.binario-columna:nth-child(2) { left: 18%; animation: caerBinario 9.5s linear infinite -2.5s; color: rgba(0, 240, 255, 0.15); }
+.binario-columna:nth-child(3) { left: 32%; animation: caerBinario 7s linear infinite -4s; color: rgba(0, 240, 255, 0.12); }
+.binario-columna:nth-child(4) { left: 48%; animation: caerBinario 11s linear infinite -1s; color: rgba(0, 240, 255, 0.15); }
+.binario-columna:nth-child(5) { left: 62%; animation: caerBinario 8s linear infinite -5s; color: rgba(0, 240, 255, 0.12); }
+.binario-columna:nth-child(6) { left: 75%; animation: caerBinario 6.5s linear infinite -3s; color: rgba(0, 240, 255, 0.18); }
+.binario-columna:nth-child(7) { left: 88%; animation: caerBinario 10s linear infinite -1.5s; }
+.binario-columna:nth-child(8) { left: 95%; animation: caerBinario 5.5s linear infinite -3.5s; }
+
+/* Animación de caída continua */
+@keyframes caerBinario {
+    0% {
+        transform: translateY(0);
+        opacity: 2;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(230vh);
+        opacity: 2;
+    }
+}
+
+
+
+
+
+/* Oculta el cursor por defecto en toda la página */
+* {
+  cursor: none !important;
+}
+
+/* Contenedor flotante del cursor */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  pointer-events: none; /* Permite hacer clic a través del cursor */
+  z-index: 99999;
+  transform: translate(-10px, -10px); /* Alinea la punta de la mano con el clic */
+  transition: transform 0.05s ease-out, opacity 0.2s ease;
+}
+
+#custom-cursor img {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0px 0px 8px rgba(56, 189, 248, 0.5));
+}
+
+/* Animación cuando presionas el clic */
+#custom-cursor.clicking {
+  transform: translate(-10px, -10px) scale(0.9);
+}
+
+
+
+
+
+
